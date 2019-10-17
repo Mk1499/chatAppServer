@@ -25,7 +25,7 @@ ChatRouter.post('/newChat', function (req, res) {
                         console.log(err);
                     else {
                         console.log("Insertion ID : ",insertID) ;
-                res.status(200).send({ code:"200", message: "new Chat Created" , chatID : insertID._id , messages : ""})
+                res.status(200).send({ code:"200", message: "new Chat Created" , chatID : insertID._id , messages : []})
 
                     }
                 })
