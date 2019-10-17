@@ -58,11 +58,9 @@ let onlineUsers = [];
 let activeChats = [];
 
 socket.on('connection', function (socket) {
-
-    console.log("NEw Online User ") ; 
     // add new user connections to online users array 
     socket.on('addOnlineUser', (data) => {
-        console.log("New Online User : " , data )
+
         let haveASocket = false;
         onlineUsers.map(user => {
             if (user.userID == data.userID) {
@@ -84,7 +82,6 @@ socket.on('connection', function (socket) {
                     console.log("Status changed to online")
                 }
             })
-console.log("Online USers Arr : ",onlineUsers)
 
     })
 
@@ -136,7 +133,7 @@ console.log("Online USers Arr : ",onlineUsers)
                      console.log("Status changed to Offline")
                  }
              })
-                .catch(err => console.log(err   ))
+
         // console.log(`user with id : ${user.userID} Disconnected `);
 
         console.log(`Socket ${socket.id} disconnected.`);

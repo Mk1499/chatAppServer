@@ -9,7 +9,8 @@ ChatRouter.post('/newChat', function (req, res) {
     let users = req.body.users;
     let membersIDs = users.map((user) => mongoose.Types.ObjectId(user))
     // console.log("TEST : ",test)
-    Chat.find({ users: {$all: membersIDs } })
+// Chat.find({_id : chatID} , {messages : {$slice : -20} , _id : 0})
+    Chat.find({ users: {$all: membersIDs } } ,  {messages : {$slice : -20} } )
         // .exec()
         .then(chat => {
             console.log("Chatttt : ", chat)
