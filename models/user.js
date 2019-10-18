@@ -17,10 +17,9 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    user_img: {
-        data: Buffer,
-        contentType: String , 
-        default : ""
+    profileImg: {
+        type: String ,
+        default : "http://aras.kntu.ac.ir/wp-content/uploads/2019/05/hoodie-.png"
     },
     friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }] , 
     status: {
